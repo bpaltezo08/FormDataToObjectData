@@ -5,7 +5,7 @@ const FormDataToObjectData = function(){
         for(var x=0;x<formdata.length;x++){
             let key = formdata[x].split("=")[0];
             let data = formdata[x].split("=")[1];
-            this[key] = data;
+            this[key] = data.replace(/\+/g, " ");
         }
         return (option == "raw") ? this.data() : this;
     },
